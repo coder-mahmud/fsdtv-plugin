@@ -1,0 +1,274 @@
+/* Mixitup */
+.controls {
+    padding: 1rem;
+
+}
+
+.controls span{
+	padding:7px 10px;
+	cursor: pointer;
+	background:none;
+	color:#000;
+}
+
+.control {
+    position: relative;
+    display: inline-block;
+    background: #444;
+    cursor: pointer;
+    color: white;
+    transition: background 150ms;
+    
+}
+.control.mixitup-control-active{
+	background:#000;
+	color:#fff;
+}
+
+.control:hover {
+    background: #ddd;
+}
+
+
+.controls fieldset{
+	display:inline-block;
+	margin-left:40px;
+	border:1px solid #ddd;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.control[data-filter]:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: calc(50% - 6px);
+    left: calc(50% - 6px);
+    border: 2px solid currentColor;
+    border-radius: 2px;
+    background: currentColor;
+    transition: background-color 150ms, border-color 150ms;
+    display:none;
+}
+
+.control[data-sort]:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    top: calc(50% - 6px);
+    left: calc(50% - 6px);
+    transform:  translateY(1px) rotate(45deg);
+}
+
+.control[data-sort*=":desc"]:after {
+    transform:  translateY(-4px) rotate(-135deg);
+}
+
+.mixitup-control-active {
+    background: #393939;
+    color:#fff;
+}
+
+.mixitup-control-active[data-filter]:after {
+    background: transparent;
+}
+
+.control:first-of-type {
+    border-radius: 3px 0 0 3px;
+}
+
+.control:last-of-type {
+    border-radius: 0 3px 3px 0;
+}
+
+.control[data-filter] + .control[data-sort] {
+    margin-left: .75rem;
+}
+
+.control[data-filter=".green"] {
+    color: #91e6c7;
+}
+
+.control[data-filter=".blue"] {
+    color: #5ecdde;
+}
+
+.control[data-filter=".pink"] {
+    color: #d595aa;
+}
+
+.control[data-filter="none"] {
+    color: #2f2f2f;
+}
+
+/* Container
+---------------------------------------------------------------------- */
+
+.container {
+    padding: 1rem;
+    text-align: justify;
+}
+
+.container:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+/* Target Elements
+---------------------------------------------------------------------- */
+
+.mix,
+.gap {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.mix {
+    background: #fff;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    position: relative;
+    border:1px solid #ddd;
+}
+
+/*.mix:before {
+    content: '';
+    display: inline-block;
+}*/
+
+.mix.green {
+    color: #91e6c7;
+}
+
+.mix.pink {
+    color: #d595aa;
+}
+
+.mix.blue {
+    color: #5ecdde;
+}
+
+/* Grid Breakpoints
+---------------------------------------------------------------------- */
+
+/* 2 Columns */
+
+.mix,
+.gap {
+    width: calc(100%/1 - (((1 - 1) * 1rem) / 2));
+}
+
+/* 3 Columns */
+
+@media screen and (min-width: 768px) {
+    .mix,
+    .gap {
+        width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
+    }
+}
+
+/* 4 Columns */
+
+@media screen and (min-width: 961px) {
+	.mix-container{
+		display:flex;
+		flex-wrap: wrap;
+	}
+    .mix,
+    .gap {
+        /*width: calc(100%/3 - (((3 - 1) * 1rem) / 3));*/
+        width: 32%;
+        margin-right: 1%;
+    }
+}
+
+/* 5 Columns */
+
+/*@media screen and (min-width: 1281px) {
+    .mix,
+    .gap {
+        width: calc(100%/4 - (((4 - 1) * 1rem) / 4));
+    }
+}*/
+
+/*   Mixitup end  */
+
+    .youtube-player {
+        position: relative;
+        padding-bottom: 56.23%;
+        /* Use 75% for 4:3 videos */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+        margin: 5px;
+    }
+    
+    .youtube-player iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background: transparent;
+    }
+    
+    .youtube-player img {
+        bottom: 0;
+        display: block;
+        left: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        height: auto;
+        cursor: pointer;
+        -webkit-transition: .4s all;
+        -moz-transition: .4s all;
+        transition: .4s all;
+    }
+    
+    .youtube-player img:hover {
+        -webkit-filter: brightness(75%);
+    }
+    
+    .youtube-player .play {
+        height: 72px;
+        width: 72px;
+        left: 50%;
+        top: 50%;
+        margin-left: -36px;
+        margin-top: -36px;
+        position: absolute;
+        background: url("../img/yt_icon_mono_light.png") no-repeat;
+        cursor: pointer;
+        background-size:72px;
+    }
+    .youtube-player:hover .play{
+        background: url("../img/yt_icon_rgb.png") no-repeat;
+        background-size:72px;
+    }
+
+    .player_wrapper{
+
+    }
+
+
+
+    @media only screen and (max-width: 991px){
+    	.controls fieldset{
+			display:block;
+			margin-left: 0;
+			margin-top: 15px;
+		}
+
+    }
